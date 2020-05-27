@@ -29,13 +29,7 @@ spaceship_venv() {
 
   local 'venv'
 
-  if [[ "${SPACESHIP_VENV_GENERIC_NAMES[(i)$VIRTUAL_ENV:t]}" -le \
-        "${#SPACESHIP_VENV_GENERIC_NAMES}" ]]
-  then
-    venv="$VIRTUAL_ENV:h:t"
-  else
-    venv="$VIRTUAL_ENV:t"
-  fi
+  venv="($VIRTUAL_ENV:t)"
 
 spaceship::section \
     "$SPACESHIP_VENV_COLOR" \
